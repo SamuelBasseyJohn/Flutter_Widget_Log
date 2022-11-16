@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+// NOTE: The hero widget cant transition from widget of one type to another type
+// for example, a button cant transition to a container with Hero.
 
 /// The type `T` specifies the return type of the route which can be supplied as
 /// the route is popped from the stack via [Navigator.pop] by providing the
 /// optional `result` argument.
-
-// NOTE: The hero widget cant transition from widget of one type to another type
-// for example, a button cant transition to a container with Hero.
-
 class HeroPageRoute<T> extends PageRoute<T> {
   HeroPageRoute(
       {required WidgetBuilder builder, super.fullscreenDialog, super.settings})

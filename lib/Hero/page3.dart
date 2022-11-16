@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import '../Model/user.dart';
+import 'Model/user.dart';
 
 class HeroLandingPage extends StatelessWidget {
   List<User> profiles;
