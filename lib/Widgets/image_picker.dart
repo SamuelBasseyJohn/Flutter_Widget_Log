@@ -2,20 +2,21 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:my_flutter_widgets/Hero/floating_button.dart';
 
 // Be sure to add to the Pubspec.yaml file, the following dependencies
 // * image_picker
 // * path_provider
 // before then using this piece of code.
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class ImagePickerPage extends StatefulWidget {
+  const ImagePickerPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ImagePickerPage> createState() => _ImagePickerPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ImagePickerPageState extends State<ImagePickerPage> {
   File? _image;
   final imagePicker = ImagePicker();
 
@@ -40,18 +41,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.arrow_forward_ios)),
         ],
       ),
       body: Center(
         child: Container(
           child: _image == null
-              ? Text("Select an image, or Take a picture")
+              ? const Text("Select an image, or Take a picture")
               : Image.file(_image!),
         ),
       ),
       floatingActionButton: Padding(
-        padding: EdgeInsets.only(left: 30),
+        padding: const EdgeInsets.only(left: 30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -59,13 +61,13 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 getImageFromCamera();
               },
-              child: Icon(Icons.camera_alt),
+              child: const Icon(Icons.camera_alt),
             ),
-            FloatingActionButton(
-              onPressed: () {
+            MyFloatingButton(
+              child: const Icon(Icons.browse_gallery),
+              onTap: () {
                 getImageFromGallery();
               },
-              child: Icon(Icons.image),
             )
           ],
         ),

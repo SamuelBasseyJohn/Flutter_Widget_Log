@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:my_flutter_widgets/PageRoute/custom_navigation.dart';
+import 'package:my_flutter_widgets/Widgets/image_picker.dart';
 
 class PopupCard extends StatelessWidget {
   const PopupCard({super.key});
@@ -42,7 +44,8 @@ class PopupCard extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.push(context,
+                            CustomPageRoute(child: const ImagePickerPage()));
                       },
                       child: const Text('Next Widget'),
                     ),

@@ -132,6 +132,7 @@ class _HeroWidgetPageState extends State<HeroWidgetPage> {
         ],
       ),
       floatingActionButton: MyFloatingButton(
+        child: const Icon(Icons.add),
         onTap: () {
           Navigator.push(
               context, HeroPageRoute(builder: (context) => const PopupCard()));

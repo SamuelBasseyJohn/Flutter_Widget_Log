@@ -7,7 +7,12 @@ import 'popup_page.dart';
 
 class MyFloatingButton extends StatelessWidget {
   void Function()? onTap;
-  MyFloatingButton({super.key, required onTap});
+  final Widget child;
+  MyFloatingButton({
+    super.key,
+    required this.onTap,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +23,10 @@ class MyFloatingButton extends StatelessWidget {
         elevation: 5,
         color: Colors.blue,
         child: InkWell(
-          onTap: () => Navigator.push(
-              context, HeroPageRoute(builder: (context) => const PopupCard())),
-          child: const Padding(
-            padding: EdgeInsets.all(15.0),
-            child: Icon(Icons.add),
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: child,
           ),
         ),
       ),
