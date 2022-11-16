@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:my_flutter_widgets/Pages/page3.dart';
+import 'package:my_flutter_widgets/Hero/page3.dart';
 import 'package:my_flutter_widgets/Widgets/expansion_tile.dart';
-import 'package:my_flutter_widgets/Widgets/floating_button.dart';
+import 'package:my_flutter_widgets/Hero/floating_button.dart';
 import 'package:my_flutter_widgets/Hero/hero_page_route.dart';
 import 'package:my_flutter_widgets/Hero/popup_page.dart';
 
-import '../Model/user.dart';
+import 'Model/user.dart';
 
 class HeroWidgetPage extends StatefulWidget {
   const HeroWidgetPage({super.key});
